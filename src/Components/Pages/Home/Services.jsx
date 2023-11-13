@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import ServiceCard from "./ServiceCard";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const [servicesData, setServicesData] = useState([]);
   useEffect(() => {
-    fetch("services.json")
+    fetch("http://localhost:5000/services")
       .then((res) => res.json())
       .then((data) => setServicesData(data));
   }, []);
